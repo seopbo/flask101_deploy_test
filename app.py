@@ -1,6 +1,7 @@
 import os
 import bcrypt
 import jwt
+import config
 
 from functools import wraps
 from flask import Flask, jsonify, current_app, request, Response, g
@@ -110,7 +111,7 @@ def create_app(test_config=None):
     CORS(app)
 
     if not test_config:
-        app.config.from_pyfile("config.py")
+        app.config = config.config
     else:
         app.config.update(test_config)
 
