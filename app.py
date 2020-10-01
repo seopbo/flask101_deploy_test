@@ -200,7 +200,3 @@ def create_app(test_config=None):
         return "", 200
 
     return app  # Flask instance를 return
-
-
-if __name__ == "__main__":
-    os.system("./run_server.sh")
